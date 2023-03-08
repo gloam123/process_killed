@@ -1,16 +1,9 @@
-# process_killed
-## 小米UI14, 特定Bind标志创建的进程高概率被killed复现Demo
+# MIUI14通过bindService创建进程, BIND_IMPORTANT等标志高概率被killed复现Demo
+### MIUI14宿主进程切后台进入其他程序后, 子进程高概率被killed. 下图分别展示了Redmi K40 MIUI14.0.3和Oneplus 7t android 10.0上的不同行为.
+![Redmi K40 Pro MIUI14.0.3](https://github.com/gloam123/process_killed/blob/master/docs/redmi_k40_miui14.webp) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Oneplus 7t android 10.0](https://github.com/gloam123/process_killed/blob/master/docs/oneplus_7t_android10.webp)
 
 
-### Redmi K40 Pro MIUI14.0.3(android13) 异常系统: 宿主进程切后台后子进程高概率被killed.
-![Image text](https://github.com/gloam123/process_killed/blob/main/docs/redmi_k40_miui14.webp)
-
-
-### Oneplus 7t android 10.0 正常系统: 宿主进程切后台子进程不会被killed.
-![Image text](https://github.com/gloam123/process_killed/blob/main/docs/oneplus_7t_android10.webp)
-
-
-## 核心代码如下:
+### 核心代码如下:
 ```
 // implement
 private void startBindProcess(Context context, ProcessObserver observer, String cls, int extrasFlags) {
