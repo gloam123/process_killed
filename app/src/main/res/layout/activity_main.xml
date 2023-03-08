@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/hor_padding"
+    android:paddingEnd="@dimen/hor_padding"
+    android:paddingTop="@dimen/ver_padding"
+    android:paddingBottom="@dimen/ver_padding"
+    tools:context=".MainActivity">
+
+    <!-- Important bind process -->
+    <TextView
+        android:id="@+id/tv_important_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BIND_IMPORTANT"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_important_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/outline_link_off_black_48dp"
+        android:drawableTint="@color/disconnected_color"
+        android:textColor="@color/disconnected_color"
+        android:text="0"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintBottom_toBottomOf="@id/tv_important_text"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Waive bind process -->
+    <TextView
+        android:id="@+id/tv_waive_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/line_margin"
+        android:text="BIND_WAIVE_PRIORITY"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_important_text"/>
+    <TextView
+        android:id="@+id/tv_waive_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/outline_link_off_black_48dp"
+        android:drawableTint="@color/disconnected_color"
+        android:textColor="@color/disconnected_color"
+        android:text="0"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_waive_text" />
+
+    <!-- Misc flags process -->
+    <Spinner
+        android:id="@+id/sp_misc_flags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/line_margin"
+        android:layout_marginEnd="6dp"
+        android:entries="@array/process_bind_flags"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_misc_status"
+        app:layout_constraintTop_toBottomOf="@id/tv_waive_text" />
+    <TextView
+        android:id="@+id/tv_misc_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/outline_link_off_black_48dp"
+        android:drawableTint="@color/disconnected_color"
+        android:textColor="@color/disconnected_color"
+        android:text="0"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/sp_misc_flags" />
+
+    <!-- info -->
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/test_info"
+        android:textSize="@dimen/info_text_size"
+        android:textColor="#808080"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sp_misc_flags" />
+
+    <Button
+        android:id="@+id/btn_start_process"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Start Process"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

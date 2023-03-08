@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProcessKilled</string>
+    <string name="test_info">
+        \t\t点击"Start Process"会根据上面不同的标致调用bindService()启动不同的进程.\n
+        \t\t在MIUI14(android13)上, 宿主进程切后台后再启动其他APP, BIND_IMPORTANT等标志启动的子进程会被kill, 而BIND_WAIVE_PRIORITY标志启动的进程则不会被kill. 和MIUI其他版本或其他系统行为不一致.
+    </string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="process_bind_flags">
+        <item>BIND_AUTO_CREATE</item>
+        <item>BIND_DEBUG_UNBIND</item>
+        <item>BIND_NOT_FOREGROUND</item>
+        <item>BIND_ABOVE_CLIENT</item>
+        <item>BIND_ALLOW_OOM_MANAGEMENT</item>
+        <item>BIND_WAIVE_PRIORITY</item>
+        <item>BIND_IMPORTANT</item>
+        <item>BIND_ADJUST_WITH_ACTIVITY</item>
+        <item>BIND_NOT_PERCEPTIBLE</item>
+        <item>BIND_INCLUDE_CAPABILITIES</item>
+    </string-array>
+</resources>
